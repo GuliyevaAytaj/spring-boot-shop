@@ -22,6 +22,15 @@ pipeline:
               - step:
                   type: Run
                   name: build
+                  identifier: permission
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: gradle:7.6-jdk11
+                    shell: Sh
+                    command: chmod +x gradlew
+              - step:
+                  type: Run
+                  name: build
                   identifier: build
                   spec:
                     connectorRef: account.harnessImage
