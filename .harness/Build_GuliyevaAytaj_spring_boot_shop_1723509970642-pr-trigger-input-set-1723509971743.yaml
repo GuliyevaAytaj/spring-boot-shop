@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_GuliyevaAytaj_spring_boot_shop_1723509970642-pr-trigger-input-set
+  identifier: Build_GuliyevaAytaj_spring_boot_shop_1723509970642prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_GuliyevaAytaj_spring_boot_shop_1723509970642
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
