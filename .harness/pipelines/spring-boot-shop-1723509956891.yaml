@@ -25,23 +25,18 @@ pipeline:
                   identifier: build
                   spec:
                     connectorRef: account.harnessImage
-                    image: maven:3.8-jdk-11
+                    image: gradle:7.6-jdk11
                     shell: Sh
-                    command: mvn clean package dependency:copy-dependencies
+                    command: ./gradlew clean build
               - step:
                   type: Run
                   name: check dependencies
                   identifier: check_dependencies
                   spec:
                     connectorRef: account.harnessImage
-                    image: maven:3.8-jdk-11
+                    image: gradle:7.6-jdk11
                     shell: Sh
-                    command: mvn dependency-check:check -U -DskipTests
-                    reports:
-                      type: JUnit
-                      spec:
-                        paths:
-                          - /harness/target/*.xml
+                    command: ./gradlew dependencyCheckAnalyze --info
           platform:
             os: Linux
             arch: Amd64
