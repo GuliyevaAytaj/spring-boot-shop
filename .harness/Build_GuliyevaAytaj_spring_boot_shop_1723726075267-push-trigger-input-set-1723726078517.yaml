@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_GuliyevaAytaj_spring_boot_shop_1723726075267-push-trigger-input-set
+  identifier: Build_GuliyevaAytaj_spring_boot_shop_1723726075267pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_GuliyevaAytaj_spring_boot_shop_1723726075267
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
